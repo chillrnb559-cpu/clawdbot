@@ -1,39 +1,44 @@
 {
-      "name": "Clawdbot Development Environment",
-      "image": "mcr.microsoft.com/devcontainers/universal:2",
-      "customizations": {
-                "vscode": {
-                              "settings": {
-                                                "go.toolsManagement.checkForUpdates": "local",
-                                                "go.useLanguageServer": true,
-                                                "go.gopath": "/go",
-                                                "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
-                                                "jupyter.kernels.filter": [
-                                                                      {
-                                                                                                "path": "/opt/conda/bin/python",
-                                                                                                "type": "pythonEnvironment"
-                                                                      },
-                                                                      {
-                                                                                                "path": "/bin/python2",
-                                                                                                "type": "pythonEnvironment"
-                                                                      },
-                                                                      {
-                                                                                                "path": "/usr/bin/python2",
-                                                                                                "type": "pythonEnvironment"
-                                                                      },
-                                                                      {
-                                                                                                "path": "/usr/local/python/current/bin/python",
-                                                                                                "type": "pythonEnvironment"
-                                                                      }
-                                                ]
-                              },
-                              "extensions": [
-                                                "golang.go",
-                                                "ms-python.python",
-                                                "ms-toolsai.jupyter",
-                                                "github.vscode-pull-request-github"
-                              ]
-                }
-      },
-      "postCreateCommand": "pip install -r requirements.txt || true"
+          "name": "Clawdbot Development Environment",
+          "image": "mcr.microsoft.com/devcontainers/universal:2",
+          "hostRequirements": {
+                        "cpus": 2,
+                        "memory": "4gb",
+                        "storage": "32gb"
+          },
+          "customizations": {
+                        "vscode": {
+                                          "settings": {
+                                                                "go.toolsManagement.checkForUpdates": "local",
+                                                                "go.useLanguageServer": true,
+                                                                "go.gopath": "/go",
+                                                                "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
+                                                                "jupyter.kernels.filter": [
+                                                                                          {
+                                                                                                                        "path": "/opt/conda/bin/python",
+                                                                                                                        "type": "pythonEnvironment"
+                                                                                                },
+                                                                                          {
+                                                                                                                        "path": "/bin/python2",
+                                                                                                                        "type": "pythonEnvironment"
+                                                                                                },
+                                                                                          {
+                                                                                                                        "path": "/usr/bin/python2",
+                                                                                                                        "type": "pythonEnvironment"
+                                                                                                },
+                                                                                          {
+                                                                                                                        "path": "/usr/local/python/current/bin/python",
+                                                                                                                        "type": "pythonEnvironment"
+                                                                                                }
+                                                                ]
+                                          },
+                                          "extensions": [
+                                                                "golang.go",
+                                                                "ms-python.python",
+                                                                "ms-toolsai.jupyter",
+                                                                "github.vscode-pull-request-github"
+                                          ]
+                        }
+          },
+          "postCreateCommand": "pip install -r requirements.txt || true"
 }
